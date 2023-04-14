@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace module3
 {
@@ -6,33 +7,14 @@ namespace module3
     {
         static void Main(string[] args)
         {
-            string MyName = "Jane";
-            byte MyAge = 27;
-            byte age = 32;
-            bool HaveIApet = true;
-            double MyShoeSize = 37.5;
+            string name = "Jane";
+            byte age = 27;
+            string favcolor = "black";
 
-            Console.WriteLine("My name is " + MyName);
-            Console.WriteLine("MyAge " + MyAge);
-            Console.WriteLine("Do I have a pet? " + HaveIApet);
-            Console.WriteLine("My shoe size is " + MyShoeSize);
-            Console.WriteLine("\tПривет,\n мир!");
-            Console.WriteLine($"Мой возраст {age}");
+            Console.WriteLine("{0}\n {1}\n{2}", name, age, favcolor);
 
-            DaysOfWeek MyFavoriteDay;
-            MyFavoriteDay = DaysOfWeek.Friday;
-            Console.WriteLine(MyFavoriteDay);
-            
+            string str = Console.ReadLine();
 
-
-        }
-
-        enum DaysOfWeek : byte
-        {
-            Tuesday,
-            Monday,
-            Wednesday,
-            Friday
         }
         enum Semaphhore : uint
         {
