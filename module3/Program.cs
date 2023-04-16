@@ -7,32 +7,33 @@ namespace module3
     {
         static void Main(string[] args)
         {
-            string nameold = "Jane";
-            byte ageold = 27;
-            string favcolor = "black";
 
-            Console.WriteLine("{0}\n {1}\n{2}", nameold, ageold, favcolor);
+                Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
-            int counter = 10;
-            counter += 15;
-            Console.WriteLine("Value: {0} Increment: {1}", counter, counter);
+                var color = Console.ReadLine();
 
-            Console.Write("Enter your name: ");
-            string name = Console.ReadLine();
-            Console.Write("Enter your age: ");
-            byte age = checked((byte)int.Parse(Console.ReadLine()));
-            Console.WriteLine("Your name is {0} and age is {1} ", name, age);
-            Console.ReadKey();
+                if (color == "red")
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-            string str = Console.ReadLine();
+                    Console.WriteLine("Your color is red!");
+                }
 
-        }
+                else if (color == "green")
+                {
+                    Console.BackgroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Black;
 
-        enum Semaphhore : uint
-        {
-            Red = 100,
-            Yellow = 200,
-            Green = 300
+                    Console.WriteLine("Your color is green!");
+                }
+                else
+                {
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                    Console.ForegroundColor = ConsoleColor.Black;
+
+                    Console.WriteLine("Your color is cyan!");
+                }
         }
     }
 }
