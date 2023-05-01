@@ -6,46 +6,56 @@ namespace Module5
     {
         class MainClass
         {
-            //static string ShowColor()
-            //{
-            //    Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
-            //    var color = Console.ReadLine();
+            static string ShowColor(string username, int userage)
+            {
+                Console.WriteLine($"{username} {userage} лет \nНапишите свой любимый цвет на английском с маленькой буквы");
+                var color = Console.ReadLine();
 
-            //    switch (color)
-            //    {
-            //        case "red":
-            //            Console.BackgroundColor = ConsoleColor.Red;
-            //            Console.ForegroundColor = ConsoleColor.Black;
+                switch (color)
+                {
+                    case "red":
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-            //            Console.WriteLine("Your color is red!");
-            //            break;
+                        Console.WriteLine("Your color is red!");
+                        break;
 
-            //        case "green":
-            //            Console.BackgroundColor = ConsoleColor.Green;
-            //            Console.ForegroundColor = ConsoleColor.Black;
+                    case "green":
+                        Console.BackgroundColor = ConsoleColor.Green;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-            //            Console.WriteLine("Your color is green!");
-            //            break;
-            //        case "cyan":
-            //            Console.BackgroundColor = ConsoleColor.Cyan;
-            //            Console.ForegroundColor = ConsoleColor.Black;
+                        Console.WriteLine("Your color is green!");
+                        break;
+                    case "cyan":
+                        Console.BackgroundColor = ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Black;
 
-            //            Console.WriteLine("Your color is cyan!");
-            //            break;
-            //        default:
-            //            Console.BackgroundColor = ConsoleColor.Yellow;
-            //            Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Your color is cyan!");
+                        break;
+                    default:
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                        Console.ForegroundColor = ConsoleColor.Red;
 
-            //            Console.WriteLine("Your color is yellow!");
-            //            break;
-            //    }
-            //    return color;
-            //}
+                        Console.WriteLine("Your color is yellow!");
+                        break;
+                }
+                return color;
+            }
+            static void ShowColors(string username = "Ivan", params string[] favcolors)
+            {
+                Console.WriteLine($"{username} Ваши любимые цвета:");
+                foreach (var color in favcolors)
+                {
+                    Console.WriteLine(color);
+                }
+            }
 
             public static void Main(string[] args)
             {
-                GetArrayFromConsole();
+                var array = GetArrayFromConsole(10);
+                ShowArray(array,true);
                 
+
                 //var favcolors = new string[3];
                 //var (name, age) = ("Евгения", 27);
 
@@ -60,31 +70,31 @@ namespace Module5
                 //Console.WriteLine("Ваше имя: {0}", name);
                 //Console.WriteLine("Ваш возраст: {0}", age);
 
-                //for(var i =0; i < favcolors.Length; i++)
+                //for (var i = 0; i < favcolors.Length; i++)
                 //{
-                //    favcolors[i] = ShowColor();
+                //    favcolors[i] = ShowColor(name, age);
                 //}
 
-                //Console.WriteLine("Ваши цвета:");
-                //foreach(var color in favcolors)
-                //{
-                //    Console.WriteLine(color);
-                //}
+                //ShowColors();
             }
-            static int[] GetArrayFromConsole()
+            static int[] GetArrayFromConsole(int num = 3)
             {
-                var result = new int[5];
+                var result = new int[num];
 
                 for (int i = 0; i < result.Length; i++)
                 {
                     Console.WriteLine("Введите элемент массива номер {0}", i + 1);
                     result[i] = int.Parse(Console.ReadLine());
                 }
+
+                return result;
+            }
+            static int[] SortArray(int[] result)
+            {
                 int temp;
-                
-                for (int a = 0; a<result.Length;a++)
+                for (int a = 0; a < result.Length; a++)
                 {
-                    for (int b = a + 1; b < result.Length;b++)
+                    for (int b = a + 1; b < result.Length; b++)
                     {
                         if (result[a] > result[b])
                         {
@@ -94,13 +104,19 @@ namespace Module5
                         }
                     }
                 }
+                
 
+                return result;
+            }
+            static void ShowArray(int[] array, bool flag = false)
+            {
+                var result = array;
+                if (flag) { result = SortArray(array); } 
+                
                 foreach (var item in result)
                 {
                     Console.WriteLine(item);
                 }
-
-                return result;
             }
         }
     }
