@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "module3", "module3\module3.csproj", "{F40AAF40-0A33-4E68-A735-51F6CA537B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module4and5", "Module4and5\Module4and5.csproj", "{600E6766-009F-4C16-ACFE-2610E852F085}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module4", "Module4and5\Module4.csproj", "{600E6766-009F-4C16-ACFE-2610E852F085}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
