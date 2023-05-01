@@ -7,7 +7,6 @@
             (string Name, string LastName, string Login, int LoginLength, bool HasPet, string[] favcolors, double Age) User;
 
             for (int j = 0; j<3; j++) { 
-                п
             Console.WriteLine("Введите имя");
 
             User.Name = Console.ReadLine();
