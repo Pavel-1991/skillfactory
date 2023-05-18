@@ -1,137 +1,160 @@
 ﻿namespace Module7
 {
-    class A
+    abstract class Delivery
     {
-        public virtual void Display()
+        public string Address;
+        public virtual void showDelivery()
         {
-            Console.WriteLine("A");
+            Console.WriteLine("неопределённый тип доставки");
+        }
+        public Delivery(string address)
+        {
+            Address = address;
         }
     }
-    class B:A 
+
+    class HomeDelivery : Delivery
     {
-        public new void Display()
+        protected string Сourier;
+        public HomeDelivery(string сourier, string address) : base(address)
         {
-            Console.WriteLine("B");
+            Сourier = сourier;
+        }
+        public override void showDelivery()
+        {
+            Console.WriteLine($"Доставка на дом по адресу:{Address}");
         }
     }
-    class C:A 
+
+    class PickPointDelivery : Delivery
     {
-        public override void Display()
+        protected string NamePickPoint;
+        public PickPointDelivery(string namePickPoint, string address) : base(address)
         {
-            Console.WriteLine("C");
+            NamePickPoint = namePickPoint;
+        }
+        public override void showDelivery()
+        {
+            Console.WriteLine($"Доставка в пункт выдачи по адресу:{Address}");
         }
     }
-    class D:B
+
+    class ShopDelivery : Delivery
     {
-        public new void Display() { Console.WriteLine("D"); }
+        protected string NameShop;
+        public ShopDelivery(string nameShop, string address) : base(address)
+        {
+            NameShop = nameShop;
+        }
+        public override void showDelivery()
+        {
+            Console.WriteLine($"Доставка в магазин по адресу:{Address}");
+        }
     }
-    class E:C
+
+    class Order<TDelivery> where TDelivery : Delivery
     {
-        public new void Display() { Console.WriteLine("E"); }
+        public TDelivery Delivery;
+
+        public int Number;
+
+        public string Description;
+
+        public Productlist Productlist;
+
+        public void DisplayAddress()
+        {
+            Console.WriteLine(Delivery.Address);
+        }
+        public Order(TDelivery delivery, int number, string description, Productlist productlist)
+        {
+            Delivery = delivery;
+            Number = number;
+            Description = description;
+            Productlist = productlist;
+        }
+    }
+    class ForeignOrder<TDelivery> : Order<TDelivery> where TDelivery : Delivery
+    {
+        public string country;
+        public ForeignOrder(string country, TDelivery delivery, int number, string description, Productlist productlist) : base(delivery, number, description, productlist)
+        {
+            this.country = country;
+        }
     }
 
-    //class BaseClass
-    //{
-    //    public int Counter
-    //    {
-    //        get;
-    //        set;
-    //    }
-    //}
+    class Product
+    {
+        public string Name;
+        public int Quantity;
+    }
 
-    //class DerivedClass : BaseClass
-    //{
-    //    public override int Counter
-    //    {
-    //        get
-    //        {
-    //            return Counter;
-    //        }
-    //        set
-    //        {
-    //            if (value > 0) { }
-    //        }
-    //    }
-    //}
-    //class BaseClass
-    //{
-    //    protected string Name;
+    class Productlist
+    {
+        public Product[] list;
 
-    //    public BaseClass(string name)
-    //    {
-    //        Name = name;
-    //    }
-    //}
+        public Productlist(Product[] list)
+        {
+            this.list = list;
+        }
+        public Product this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < list.Length)
+                {
+                    return list[index];
+                }
+                else
+                {
+                    return null;
+                }
+            }
 
-    //class DerivedClass : BaseClass
-    //{
-    //    public string Description;
+            private set
+            {
+                if (index >= 0 && index < list.Length)
+                {
+                    list[index] = value;
+                }
+            }
+        }
 
-    //    public int Counter;
-    //    public DerivedClass(string name, string Description);
-    //}
+        public Product this[string name]
+        {
+            get
+            {
+                for (int i = 0; i < list.Length; i++)
+                {
+                    if (list[i].Name == name)
+                    {
+                        return list[i];
+                    }
+                }
+                return null;
+            }
+        }
+    }
 
-    //class SmartHelper
-    //{
-    //    private string name;
-
-    //    public SmartHelper(string name)
-    //    {
-    //        this.name = name;
-    //    }
-
-    //    public void Greetings(string name)
-    //    {
-    //        Console.WriteLine("Привет, {0}, я интеллектуальный помощник {1}", name, this.name);
-    //    }
-    //}
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            A a = new A();
-            B b = new B();
-            C c = new C();
-            D d = new D();
-            E e = new E();
-            ((A)b).Display();
-            ((A)c).Display();
-            ((A)d).Display();
-            ((A)e).Display();
-            ((B)b).Display();
-            //SmartHelper helper = new SmartHelper("Олег");
-            //helper.Greetings("Грег");
+            HomeDelivery HomeDel = new HomeDelivery("Иванов И.И.", "рязань,праволыбедская 40");
+            HomeDel.showDelivery();
 
-            //Console.ReadKey();
+            var array = new Product[]
+            {
+                new Product {Name = "Картошка", Quantity = 3},
+                new Product {Name = "Лук", Quantity=2},
+            };
+            Productlist Nlist = new Productlist(array);
+            Order<HomeDelivery> order1 = new Order<HomeDelivery>(HomeDel, 3, "Роллы", Nlist);
+            order1.DisplayAddress();
+            var Prod1 = Nlist["Картошка"].Quantity;
+            Console.WriteLine(Prod1);
+            string ProductName = "Лук";
+            Console.WriteLine($"Количество товара {ProductName} в заказе № {order1.Number} = {order1.Productlist[ProductName].Quantity}");
         }
-        //class Employee
-        //{
-        //    public string Name;
-        //    public int Age;
-        //    public int Salary;
-        //}
-        //class ProjectManager : Employee
-        //{
-        //    public string ProjectName;
-        //}
-        //class Developer : Employee
-        //{
-        //    public string ProgrammingLanguage;
-        //}
-        //class Obj
-        //{
-        //    private string name;
-        //    private string owner;
-        //    private int length;
-        //    private int count;
-
-        //    public Obj(string name, string ownerName, int objLength, int count)
-        //    {
-        //        this.name = name;
-        //        owner = ownerName;
-        //        length = objLength;
-        //        this.count = count;
-        //    }
-        //}
     }
 }
