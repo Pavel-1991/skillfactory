@@ -26,9 +26,8 @@ namespace Module8
                         DateTime dateTimeWrite = File.GetLastWriteTime(dirs[i]);
                         TimeSpan timeInterval = dateTimeNow.Subtract(dateTimeWrite);
                         var IntervalMin = timeInterval.TotalMinutes;
-                        Console.WriteLine(IntervalMin);
                         i++;
-                        if (IntervalMin < 30)
+                        if (IntervalMin > 30)
                         {
                             DirectoryInfo dirInfo = new(d);
                             dirInfo.Delete(true);
@@ -44,9 +43,8 @@ namespace Module8
                         DateTime dateTimeWrite = File.GetLastWriteTime(files[i]);
                         TimeSpan timeInterval = dateTimeNow.Subtract(dateTimeWrite);
                         var IntervalMin = timeInterval.TotalMinutes;
-                        Console.WriteLine(IntervalMin);
                         i++;
-                        if (IntervalMin < 30)
+                        if (IntervalMin > 30)
                         {
                             FileInfo dirInfo = new(s);
                             dirInfo.Delete();
