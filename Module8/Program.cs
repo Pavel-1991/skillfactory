@@ -10,24 +10,27 @@ namespace Module8
             try
             {
                 string FolderdirName = @"C:\Users\Zver\Desktop\SkilF\";
-                DirectoryInfo folder = new DirectoryInfo(FolderdirName);
-                long WeightCatalog = GetWeightCatal(folder);        //Причёсанный метод для задания 2
-                Console.WriteLine($"Размер каталога в байтах = {WeightCatalog}");
+                if (Directory.Exists(FolderdirName))
+                {
+                    DirectoryInfo folder = new DirectoryInfo(FolderdirName);
+                    long WeightCatalog = GetWeightCatal(folder);        //Причёсанный метод для задания 2
+                    Console.WriteLine($"Исходный размер каталога в байтах = {WeightCatalog}");
+                    GetCatalClean(FolderdirName);        //Задание 1
+                    DirectoryInfo folderNew = new DirectoryInfo(FolderdirName);
+                    long WeightCatalogNew = GetWeightCatal(folderNew);        //Размер после очистки для задания 3
+                    Console.WriteLine($"Освобождённый размер в байтах = {WeightCatalog - WeightCatalogNew}");
+                    Console.WriteLine($"Итоговый размер в байтах = {WeightCatalogNew}");
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            GetCatalClean();        //Задание 1
+            
         }
-        static void GetCatalClean()
+        static void GetCatalClean(string dirName)
         {
-            try
-            {
-                string dirName = @"C:\Users\Zver\Desktop\SkilF\"; 
-                if (Directory.Exists(dirName)) 
-                {
                     Console.WriteLine("Папки:");
                     string[] dirs = Directory.GetDirectories(dirName);  
                     int i = 0;
@@ -63,12 +66,6 @@ namespace Module8
                             Console.WriteLine($"файл {dirInfo} удален");
                         }
                     }
-                }
-            }
-            catch(Exception e) 
-            {
-                Console.WriteLine(e.Message);
-            }
         }
 
         static long GetWeightCatal(DirectoryInfo folder)
