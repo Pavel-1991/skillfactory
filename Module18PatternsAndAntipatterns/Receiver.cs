@@ -10,7 +10,7 @@ namespace Module18PatternsAndAntipatterns
         private YoutubeClient youtubeClient = new YoutubeClient();
         public async Task GetInfo(string videoUrl)
         {
-            var videoInfo = await youtubeClient.Videos.GetAsync(videoUrl);   //не понимаю что с GetAsync
+            var videoInfo = await youtubeClient.Videos.GetAsync(videoUrl);   
             Console.WriteLine($"Название: {videoInfo.Title}");
             Console.WriteLine($"Описание: {videoInfo.Description}");
         }

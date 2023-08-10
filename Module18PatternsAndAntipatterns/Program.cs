@@ -13,13 +13,16 @@ namespace Module18PatternsAndAntipatterns
             Console.WriteLine("Введите адрес видео на Youtube:");
             videoUrl = Console.ReadLine();
 
+            var getInfo = new GetInfo(receiver, videoUrl);
+            sender.SetCommand(getInfo);
+            sender.Run();
+            Console.ReadLine();
+
             var downVideo = new DownloadVideo(receiver, videoUrl);
             sender.SetCommand(downVideo);
             sender.Run();
 
-            var getInfo = new GetInfo(receiver, videoUrl);
-            sender.SetCommand(getInfo);
-            sender.Run();
+            
 
 
         }
