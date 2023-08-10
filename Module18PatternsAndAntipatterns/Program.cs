@@ -16,13 +16,14 @@ namespace Module18PatternsAndAntipatterns
             var getInfo = new GetInfo(receiver, videoUrl);
             sender.SetCommand(getInfo);
             sender.Run();
-            Console.ReadLine();
+            Console.ReadLine();    //чтобы была возможность подождать(чудодейственное ожидание)
 
             var downVideo = new DownloadVideo(receiver, videoUrl);
             sender.SetCommand(downVideo);
             sender.Run();
+            Console.ReadLine();    //чтобы была возможность подождать(чудодейственное ожидание)
 
-            
+
 
 
         }

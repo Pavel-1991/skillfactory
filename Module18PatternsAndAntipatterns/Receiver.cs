@@ -18,7 +18,7 @@ namespace Module18PatternsAndAntipatterns
         {
             try
             {
-                await youtubeClient.Videos.DownloadAsync(videoUrl, @"C:\Users\Zver\Downloads\1.mp4");
+                await youtubeClient.Videos.DownloadAsync(videoUrl, @"C:\Users\Zver\Downloads\1.mp4", builder => builder.SetPreset(ConversionPreset.UltraFast)).AsTask();
             }
             catch (VideoUnavailableException)
             {
