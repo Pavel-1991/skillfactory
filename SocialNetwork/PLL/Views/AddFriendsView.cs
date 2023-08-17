@@ -23,7 +23,7 @@ namespace SocialNetwork.PLL.Views
             {
                 var userAddFriends = new UserAddFriends();
 
-                Console.WriteLine("Введите почтовый адрес пользователя которого хотите добавить в друзья: ");
+                Console.WriteLine("Введите почтовый адрес пользователя для добавления его в друзья: ");
 
                 userAddFriends.Friend_Email = Console.ReadLine();
                 userAddFriends.User_id = user.Id;
@@ -35,12 +35,12 @@ namespace SocialNetwork.PLL.Views
 
             catch (UserNotFoundException)
             {
-                AlertMessage.Show("Пользователя с указанным почтовым адресом не существует!");
+                AlertMessage.Show("Пользователя с указанным email не существует!");
             }
 
             catch (Exception)
             {
-                AlertMessage.Show("Произоша ошибка при добавлении пользотваеля в друзья!");
+                AlertMessage.Show("Произоша ошибка при добавлении пользотваеля в друзья! Попробуйте ещё раз.");
             }
 
         }
