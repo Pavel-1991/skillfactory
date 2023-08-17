@@ -45,7 +45,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module16NUnit.Tests", "Modu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module17Patterns", "Module17Patterns\Module17Patterns.csproj", "{768A2742-4236-4D76-9DBE-E76E9707CC80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module18PatternsAndAntipatterns", "Module18PatternsAndAntipatterns\Module18PatternsAndAntipatterns.csproj", "{87CF2661-604F-4265-9003-EE825B51123A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module18PatternsAndAntipatterns", "Module18PatternsAndAntipatterns\Module18PatternsAndAntipatterns.csproj", "{87CF2661-604F-4265-9003-EE825B51123A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork", "SocialNetwork\SocialNetwork.csproj", "{9BCDACCE-B417-400C-8F55-305EC23E1708}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -141,6 +143,10 @@ Global
 		{87CF2661-604F-4265-9003-EE825B51123A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87CF2661-604F-4265-9003-EE825B51123A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87CF2661-604F-4265-9003-EE825B51123A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
