@@ -47,7 +47,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module17Patterns", "Module1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module18PatternsAndAntipatterns", "Module18PatternsAndAntipatterns\Module18PatternsAndAntipatterns.csproj", "{87CF2661-604F-4265-9003-EE825B51123A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocialNetwork", "SocialNetwork\SocialNetwork.csproj", "{9BCDACCE-B417-400C-8F55-305EC23E1708}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SocialNetwork", "SocialNetwork\SocialNetwork.csproj", "{9BCDACCE-B417-400C-8F55-305EC23E1708}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramTest", "ProgramTest\ProgramTest.csproj", "{18550570-FD09-4227-B7A3-C692E5F7CF2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module24LibrarySQL", "Module24LibrarySQL\Module24LibrarySQL.csproj", "{B8D96193-810E-4418-9BE1-470FFAAC07AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module24ADOConsole", "Module24ADOConsole\Module24ADOConsole.csproj", "{2471EA46-E787-404C-92CC-F69652B9AFFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -147,6 +153,18 @@ Global
 		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BCDACCE-B417-400C-8F55-305EC23E1708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18550570-FD09-4227-B7A3-C692E5F7CF2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18550570-FD09-4227-B7A3-C692E5F7CF2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18550570-FD09-4227-B7A3-C692E5F7CF2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18550570-FD09-4227-B7A3-C692E5F7CF2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D96193-810E-4418-9BE1-470FFAAC07AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D96193-810E-4418-9BE1-470FFAAC07AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D96193-810E-4418-9BE1-470FFAAC07AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D96193-810E-4418-9BE1-470FFAAC07AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2471EA46-E787-404C-92CC-F69652B9AFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2471EA46-E787-404C-92CC-F69652B9AFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2471EA46-E787-404C-92CC-F69652B9AFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2471EA46-E787-404C-92CC-F69652B9AFFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
